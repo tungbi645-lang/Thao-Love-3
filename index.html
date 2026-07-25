@@ -101,6 +101,12 @@
 </head>
 <body>
 
+    <!-- THÊM FILE NHẠC TẠI ĐÂY -->
+    <audio id="bgMusic" loop preload="auto">
+        <!-- Đường link nhạc nhẹ nhàng không lời (bạn có thể đổi link khác nếu muốn) -->
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=happy-birthday-115332.mp3" type="audio/mpeg">
+    </audio>
+
     <div class="card">
         <h1>✨ Chúc Mừng Sinh Nhật Thảo! ✨</h1>
         
@@ -131,13 +137,20 @@
 
         setInterval(createFloatingItem, 300);
 
-        // Phản hồi khi Thảo bấm chọn nút
+        // Phát nhạc và phản hồi khi Thảo bấm chọn nút
         function respond(amount) {
-            if (amount === 1) {
-                alert('Chốt deal 1 nụ hôn nhé! Nhớ trả đủ đấy nha 😚❤️');
-            } else {
-                alert('Wow 10 cái luôn! Thảo hứa rồi đấy nhé, tớ ghi nhớ rồi đó nha 🥰💋');
-            }
+            // Phát nhạc nền
+            const music = document.getElementById('bgMusic');
+            music.play().catch(e => console.log("Không thể tự phát nhạc: ", e));
+
+            // Hiện thông báo
+            setTimeout(() => {
+                if (amount === 1) {
+                    alert('Chốt deal 1 nụ hôn nhé! Nhớ trả đủ đấy nha 😚❤️');
+                } else {
+                    alert('Wow 10 cái luôn! Thảo hứa rồi đấy nhé, tớ ghi nhớ rồi đó nha 🥰💋');
+                }
+            }, 100);
         }
     </script>
 </body>
