@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chúc Mừng Sinh Nhật!</title>
+    <title>Gửi Thảo ❤️</title>
     <style>
         body {
             margin: 0;
@@ -20,15 +20,16 @@
 
         /* Thẻ nội dung chính */
         .card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.92);
             padding: 30px;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             text-align: center;
-            max-width: 80%;
+            max-width: 85%;
+            width: 350px;
             z-index: 10;
             backdrop-filter: blur(5px);
-            animation: fadeIn 1.5s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         h1 {
@@ -39,9 +40,10 @@
 
         p {
             color: #333;
-            font-size: 16px;
+            font-size: 18px;
             line-height: 1.6;
             margin-bottom: 25px;
+            font-weight: 500;
         }
 
         /* Nút bấm tương tác */
@@ -67,10 +69,10 @@
 
         button:hover {
             background-color: #f50057;
-            transform: scale(1.05);
+            transform: scale(1.08);
         }
 
-        /* Hiệu ứng bong bóng / Trái tim / Hộp quà bay */
+        /* Hiệu ứng trái tim và hộp quà bay */
         .floating-item {
             position: absolute;
             bottom: -50px;
@@ -100,30 +102,25 @@
 <body>
 
     <div class="card">
-        <h1>✨ Happy Birthday! ✨</h1>
-        <!-- THAY ĐỔI LỜI NHẮN CỦA BẠN TẠI ĐÂY -->
-        <p>
-            Chúc mừng sinh nhật cô gái đặc biệt! 🎂<br>
-            Chúc em tuổi mới luôn tràn ngập nụ cười, hạnh phúc và gặp thật nhiều may mắn.<br>
-            Cảm ơn em vì đã xuất hiện! ❤️
-        </p>
+        <h1>✨ Chúc Mừng Sinh Nhật Thảo! ✨</h1>
         
-        <p><strong>Em có thích món quà nhỏ này không?</strong></p>
+        <p>Thảo trả phí cho tớ bằng 1 nụ hôn nhé hihi 😘</p>
+        
         <div class="btn-group">
-            <button onclick="respond('Thích lắm luôn! 🥰')">Có, thích lắm! ❤️</button>
-            <button onclick="respond('Siêu thích luôn nè! ✨')">Rất thích luôn! 🥰</button>
+            <button onclick="respond(1)">1 cái 💋</button>
+            <button onclick="respond(10)">10 cái 😘</button>
         </div>
     </div>
 
     <script>
         // Tạo hiệu ứng trái tim và hộp quà bay
-        const icons = ['❤️', '💖', '🎁', '✨', '🌸', '💕'];
+        const icons = ['❤️', '💖', '🎁', '✨', '🌸', '💕', '💋'];
         function createFloatingItem() {
             const item = document.createElement('div');
             item.classList.add('floating-item');
             item.innerText = icons[Math.floor(Math.random() * icons.length)];
             item.style.left = Math.random() * 100 + 'vw';
-            item.style.animationDuration = (Math.random() * 3 + 3) + 's'; // Bay trong 3-6s
+            item.style.animationDuration = (Math.random() * 3 + 3) + 's';
             item.style.fontSize = (Math.random() * 15 + 20) + 'px';
             document.body.appendChild(item);
 
@@ -134,9 +131,13 @@
 
         setInterval(createFloatingItem, 300);
 
-        // Phản hồi khi bấm nút
-        function respond(message) {
-            alert('Cảm ơn em: ' + message + '\nChúc em một ngày sinh nhật thật tuyệt vời! 🎉');
+        // Phản hồi khi Thảo bấm chọn nút
+        function respond(amount) {
+            if (amount === 1) {
+                alert('Chốt deal 1 nụ hôn nhé! Nhớ trả đủ đấy nha 😚❤️');
+            } else {
+                alert('Wow 10 cái luôn! Thảo hứa rồi đấy nhé, tớ ghi nhớ rồi đó nha 🥰💋');
+            }
         }
     </script>
 </body>
